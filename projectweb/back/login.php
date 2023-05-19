@@ -2,7 +2,7 @@
 $servername = "127.0.0.1";
 $username = "root";
 $password = "12345678";
-$dbname = "person";
+$dbname = "login";
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 
 
@@ -17,7 +17,7 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
     $email = $_POST['email'];
 
 
-    $sql = "SELECT * FROM persons WHERE email='$email' AND pass='$password'";
+    $sql = "SELECT * FROM login_info WHERE email='$email' AND pass='$password'";
     $result = mysqli_query($conn, $sql);
     
     if (mysqli_num_rows($result) > 0) {
